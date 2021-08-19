@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+
+    <link href="public/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="dasboard-user.css">
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class=" well col-xs-6 col-md-3">
+            RM234567<br>
+            <b>Permata Sari</b><br>
+            29 tahun / 23 Jan 1986
+            <hr>
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Dashboard</a></li>
+                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Rekam Medis</a></li>
+                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Diagnosis</a></li>
+                <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Tindakan Medis</a></li>
+                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> Hasil Radiologi</a></li>
+            </ul>
+        </div>
+        <div class=" col-xs-12 col-sm-6 col-md-9">
+            <h3><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Tindakan Medis</h3>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Status Pasien</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-3" style=" margin-left: 30px;">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="statsOption" id="statsRawatJalan" value="rawatJalan" checked>
+                                Rawat Jalan
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="statsOption" id="statsRawatInap" value="rawatInap">
+                                Rawat Inap
+                                <input type="text" class="form-control input-sm" id="roomNumber" placeholder="Nomor Kamar">
+                                <div class="form-inline">
+                                    <small>Mulai</small> <input type="date" class="form-control input-sm" id="startFrom">
+                                    <small>Sampai </small><input type="date" class="form-control input-sm" id="endUntil">
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Tindakan</h4>
+                </div>
+                <table width="100%" class="table table-hover" id="">
+                    <thead>
+                        <tr>
+                            <th>
+                                Waktu
+                            </th>
+                            <th width="30%">
+                                Deskripsi
+                            </th>
+                            <th>
+                                Informasi Tambahan
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-name="datetime">
+                                03/03/2015 09:23 AM
+                            </td>
+                            <td data-name="description">
+                                Operasi jantung
+                            </td>
+                            <td data-name="additionalInformation">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris elementum nisi nunc, quis consectetur magna condimentum et. In ultricies porta orci nec feugiat.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-name="datetime">
+                                <input type="datetime-local" name="date" class="form-control">
+                            </td>
+                            <td data-name="description">
+                                <input type="text" name="description" placeholder="Deskripsi" class="form-control">
+                            </td>
+                            <td data-name="additionalInformation">
+                                <textarea name="additionalInformation" placeholder="Informasi tambahan" class="form-control" rows="4"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a id="add_row" class="btn btn-primary" style=" margin-left: 90%;"> Simpan</a>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <!-- <script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script> -->
+    <script src="/public/assets/lib/jquery/jquery.min.js"></script>
+    <script src="/public/assets/lib/jquery/jquery-migrate.min.js'"></script>
+    <script src="/public/assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/assets/lib/easing/easing.min.js"></script>
+    <script src="/public/assets/lib/wow/wow.min.js"></script>
+    <script src="/public/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="/public/assets/lib/counterup/counterup.min.js"></script>
+    <script src="/public/assets/lib/superfish/hoverIntent.js"></script>
+    <script src="/public/assets/lib/superfish/superfish.min.js"></script>
+
+    <script src="dasboard-user.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SiJago - Sistem Informasi Jaga Jogja</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="public/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="public/assets/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!-- <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a> -->
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="#hero">SiJago</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#services">Proses Laporan</a></li>
+          <li><a href="#">Laporan</a></li>
+          <li><a href="#contact">Hubungi Kami</a></li>
+          <!-- <li>
+            <button type="submit" class="btn btn-login" a href="/login.html">Masuk</button>
+          </li>
+          <li>
+            <button type="submit" class="btn btn-register" >Daftar</button>
+          </li> -->
+          <button type="button" class="btn btn-login" data-toggle="modal" href="">MASUK</button>
+          <button type="button" class="btn btn-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">DAFTAR</button>
+        </ul>
+      </nav> <!-- #nav-menu-container -->
+    </div>
+  </header> <!-- #header -->
+
+  <div class="modal fade login" id="loginModal">
+         <div class="modal-dialog login animated">
+             <div class="modal-content">
+                <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
+                   <div class="modal-body">
+                       <div class="box">
+                            <div class="content">
+                               <div class="error"></div>
+                               <div class="form loginBox">
+                                   <form method="" action="" accept-charset="UTF-8">
+                                   <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                   <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                   <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                   </form>
+                                 </div>
+                             </div>
+                          </div>
+                       <div class="box">
+                           <div class="content registerBox" style="display:none;">
+                            <div class="form">
+                               <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                <input id="nama_lengkap_user" class="form-control" type="text" placeholder="Nama Lengkap" name="nama_lengkap_user">
+                                <input id="username_user" class="form-control" type="text" placeholder="Username" name="username_user">
+                                <select id="gender" class="form-control" type="text" placeholder="Jenis Kelamin" name="gender">
+                                    <option placeholder="Jenis Kelamin"></option>
+                                    <option value="M">Laki-laki</option>
+                          		      <option value="F">Perempuan</option>
+                          		      </select>
+
+                                <input type="radio" name="gender" value="M"> Male<br>
+                                <input type="radio" name="gender" value="F"> Female<br>
+
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                <input id="password_user" class="form-control" type="password" placeholder="Kata Sandi" name="password_user">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="Ulangi Kata Sandi" name="password_confirmation">
+                                <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
+                               </form>
+                            </div>
+                          </div>
+                       </div>
+                     </div>
+
+                   <div class="modal-footer">
+                       <div class="forgot login-footer">
+                           <span>Looking to
+                                <a href="javascript: showRegisterForm();">create an account</a>
+                           ?</span>
+                       </div>
+                       <div class="forgot register-footer" style="display:none">
+                            <span>Already have an account?</span>
+                            <a href="javascript: showLoginForm();">Login</a>
+                       </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Sistem Informasi Jaga Jogja</h1>
+      <h2>Laporkan keresahan yang terjadi di sekitar Anda dengan SiJago</h2>
+      <a href="#about" class="btn-get-started">Mulai Sekarang</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!--==========================
+      Form Section
+    ============================-->
+    <!-- <section id="box-lapor">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 mg-b-40">
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <h2 class="title">Tentang SiJago</h2>
+            <p>
+              Daerah Istimewa Yogyakarta dikenal sebagai daerah yang menyimpan potensi pariwisata yang sangat luas, hal ini jelas berdampak dengan banyaknya kunjungan wisatawan baik wisatawan domestik maupun asing.  Peningkatan jumlah wisatawan tentunya akan berpengaruh terhadap pendapatan provinsi DIY dari sektor pariwisata. Oleh karena itu, Pemerintah Daerah Istimewa Yogyakarta akan terus berupaya untuk meningkatkan citra apik DIY serta meningkatkan promosi dan pemasaran pariwisata.
+            </p>
+            <p>
+              Salah satu upaya pemerintah dalam meningkatkan citra apik DIY ialah dengan menghadirkan Si Jago. Sistem Informasi Jaga Jogja (disingkat SI JAGO) adalah sebuah sistem informasi berbasis website yang ditujukkan kepada masyarakat DIY agar senantiasa berperan aktif dan peduli dengan lingkungan sekitarnya sehingga dapat tercipta lingkungan yang aman, bersih, serta fasilitas umum yang terjaga.
+            </p>
+            <p>
+              Diharapkan melalui layanan yang disajikan oleh Si Jago, seluruh lapisan masyarakat bisa melaporkan berbagai kerusakan yang ada di sekitar DIY. Contohnya dalam menjaga fasiltas umum, masyarakat dapat melaporkan adanya coretan mural pada dinding sebuah cagar budaya agar coretan tersebut dapat segera dihilangkan. Setiap laporan yang terkumpul akan diverifikasi oleh Dinas Pekerjaan Umum, dan laporan yang telah terverifikasi akan segera ditindaklanjuti. Dengan upaya tersebut diharapkan DIY akan senantiasa menjadi provinsi yang memiliki citra apik yang baik.
+            </p>
+
+            <!-- <div class="icon-box wow fadeInUp">
+              <div class="icon"><i class="fa fa-glass"></i></div>
+              <h4 class="title"><a href="">judul</a></h4>
+              <p class="description">deskripsi</p>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-smile-o"></i></div>
+              <h4 class="title"><a href="">judul</a></h4>
+              <p class="description">deskripsi</p>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+              <div class="icon"><i class="fa fa-coffee"></i></div>
+              <h4 class="title"><a href="">judul</a></h4>
+              <p class="description">deskripsi</p>
+            </div> -->
+
+          </div>
+
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInRight"></div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Proses Laporan Section
+    ============================-->
+    <section id="services">
+      <div class="container wow fadeIn">
+        <div class="section-header">
+          <h3 class="section-title">Proses Laporan</h3>
+          <p class="section-description"></p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-pencil-square-o"></i></a></div>
+              <h4 class="title"><a href="">1. Tulis Laporan</a></h4>
+              <p class="description">Laporkan keluhan atau aspirasi anda dengan jelas dan lengkap</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-mail-forward"></i></a></div>
+              <h4 class="title"><a href="">2. Proses Verifikasi</a></h4>
+              <p class="description">Dalam 3 hari, laporan Anda akan diverifikasi dan diteruskan kepada instansi berwenang</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-comments"></i></a></div>
+              <h4 class="title"><a href="">3. Proses Tindak Lanjut</a></h4>
+              <p class="description">Dalam 5 hari, instansi akan menindaklanjuti dan membalas laporan Anda</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-commenting-o"></i></a></div>
+              <h4 class="title"><a href="">4. Beri Tanggapan</a></h4>
+              <p class="description">Anda dapat menanggapi kembali balasan yang diberikan oleh instansi dalam waktu 10 hari</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="box">
+              <div class="icon"><a href=""><i class="fa fa-check"></i></a></div>
+              <h4 class="title"><a href="">5. Selesai</a></h4>
+              <p class="description">Laporan Anda akan terus ditindaklanjuti hingga terselesaikan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+    Call To Action Section
+    ============================-->
+    <section id="call-to-action">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <!-- <h3 class="cta-title">h </h3> -->
+            <!-- <p class="cta-text"> h</p> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <!-- <a class="cta-btn align-middle" href="#">Laporkan Masalah</a> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #call-to-action -->
+
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Hubungi Kami</h3>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <!-- Uncomment below if you wan to use dynamic maps -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+      <div class="container wow fadeInUp mt-5">
+        <div class="row justify-content-center">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p>A108 Adam Street<br>New York, NY 535022</p>
+              </div>
+
+              <div>
+                <i class="fa fa-envelope"></i>
+                <p>info@example.com</p>
+              </div>
+
+              <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 5589 55488 55s</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>JagaJogja</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="public/assets/jquery/jquery.min.js"></script>
+  <script src="public/assets/jquery/jquery-migrate.min.js"></script>
+  <script src="public/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="public/assets/easing/easing.min.js"></script>
+  <script src="public/assets/wow/wow.min.js"></script>
+  <script src="public/assets/waypoints/waypoints.min.js"></script>
+  <script src="public/assets/counterup/counterup.min.js"></script>
+  <script src="public/assets/superfish/hoverIntent.js"></script>
+  <script src="public/assets/superfish/superfish.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
